@@ -1,4 +1,4 @@
-package com.home.leetcode;
+package com.home.leetcode.week1;
 /*
         Question:
             Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums.

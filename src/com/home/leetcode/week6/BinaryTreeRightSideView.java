@@ -1,4 +1,6 @@
-package com.home.leetcode;
+package com.home.leetcode.week6;
+
+import com.home.leetcode.util.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -13,40 +15,30 @@ import java.util.Queue;
         https://leetcode.com/problems/binary-tree-right-side-view/
  */
 public class BinaryTreeRightSideView {
-    static class Node{
-        int data;
-        Node left, right;
-
-        Node(int data){
-            this.data = data;
-            this.left = this.right = null;
-        }
-    }
-
-    static Node head;
+    static TreeNode head;
 
     public static void main(String[] args) {
-        head = new Node(1);
-        head.left = new Node(2);
-        head.right = new Node(3);
+        head = new TreeNode(1);
+        head.left = new TreeNode(2);
+        head.right = new TreeNode(3);
 
-        head.left.right = new Node(5);
-        head.right.right = new Node(4);
+        head.left.right = new TreeNode(5);
+        head.right.right = new TreeNode(4);
 
         List<Integer> rightSide = printRightSide(head);
         System.out.println(rightSide);
     }
 
-    static List<Integer> printRightSide(Node root){
+    static List<Integer> printRightSide(TreeNode root){
         List<Integer> list = new ArrayList<>();
 
-        Queue<Node> queue = new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
 
         while(!queue.isEmpty()){
             int n = queue.size();
             for(int i=1; i <= n; i++){
-                Node temp = queue.poll();
+                TreeNode temp = queue.poll();
 
                 if(i == n){
                     list.add(temp.data);

@@ -1,4 +1,6 @@
-package com.home.leetcode;
+package com.home.leetcode.week2;
+
+import com.home.leetcode.util.ListNode;
 
 /*
     Questions:
@@ -8,24 +10,14 @@ package com.home.leetcode;
         https://leetcode.com/problems/reverse-linked-list/
  */
 public class ReverseLinkedList {
-    static class Node{
-        int data;
-        Node next;
-
-        Node(int data){
-            this.data = data;
-            this.next = null;
-        }
-    }
-
-    static Node head;
+    static ListNode head;
 
     public static void main(String[] args) {
-        head = new Node(1);
-        head.next = new Node(2);
-        head.next.next = new Node(3);
-        head.next.next.next = new Node(4);
-        head.next.next.next.next = new Node(5);
+        head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
 
         head = reverseList(head);
 
@@ -36,10 +28,10 @@ public class ReverseLinkedList {
         }
     }
 
-    static Node reverseList(Node head){
-        Node prev = null;
-        Node curr = head;
-        Node next = null;
+    static ListNode reverseList(ListNode head){
+        ListNode prev = null;
+        ListNode curr = head;
+        ListNode next = null;
 
         while(curr != null){
             next = curr.next;

@@ -1,4 +1,6 @@
-package com.home.leetcode;
+package com.home.leetcode.week1;
+
+import com.home.leetcode.util.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -10,28 +12,18 @@ import java.util.Queue;
         https://leetcode.com/problems/invert-binary-tree/
  */
 public class InvertBinaryTree {
-    static class Node{
-        int data;
-        Node left, right;
-
-        Node(int data){
-            this.data = data;
-            left = right = null;
-        }
-    }
-
-    static Node root;
+    static TreeNode root;
 
     public static void main(String[] args) {
-        root = new Node(4);
-        root.left = new Node(2);
-        root.right = new Node(7);
+        root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(7);
 
-        root.left.left = new Node(1);
-        root.left.right = new Node(3);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
 
-        root.right.left = new Node(6);
-        root.right.right = new Node(9);
+        root.right.left = new TreeNode(6);
+        root.right.right = new TreeNode(9);
 
         invertBinary(root);
 
@@ -39,12 +31,12 @@ public class InvertBinaryTree {
         invertBinaryUsingRecursion(root);
     }
 
-    static Node invertBinaryUsingRecursion(Node root){
+    static TreeNode invertBinaryUsingRecursion(TreeNode root){
         //corner case
         if(root == null) return null;
 
-        Node left = invertBinaryUsingRecursion(root.left);
-        Node right = invertBinaryUsingRecursion(root.right);
+        TreeNode left = invertBinaryUsingRecursion(root.left);
+        TreeNode right = invertBinaryUsingRecursion(root.right);
 
         root.left = right;
         root.right = left;
@@ -53,13 +45,13 @@ public class InvertBinaryTree {
 
     }
 
-    static void invertBinary(Node root){
-        Queue<Node> queue = new LinkedList<>();
+    static void invertBinary(TreeNode root){
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
 
         while(!queue.isEmpty()){
-            Node node = queue.poll();
-            Node left = node.left;
+            TreeNode node = queue.poll();
+            TreeNode left = node.left;
             node.left = node.right;
             node.right = left;
 

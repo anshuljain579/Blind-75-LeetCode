@@ -1,4 +1,6 @@
-package com.home.leetcode;
+package com.home.leetcode.week1;
+
+import com.home.leetcode.util.ListNode;
 
 /*
     Questions:
@@ -10,41 +12,32 @@ package com.home.leetcode;
         https://leetcode.com/problems/merge-two-sorted-lists/
  */
 public class MergeTwoSortedList {
-    static class Node{
-        int data;
-        Node next;
 
-        Node(int data){
-            this.data = data;
-            this.next = null;
-        }
-    }
-
-    static Node head1;
-    static Node head2;
+    static ListNode head1;
+    static ListNode head2;
 
     public static void main(String[] args) {
-        head1 = new Node(1);
-        head1.next = new Node(2);
-        head1.next.next = new Node(4);
+        head1 = new ListNode(1);
+        head1.next = new ListNode(2);
+        head1.next.next = new ListNode(4);
 
-        head2 = new Node(1);
-        head2.next = new Node(3);
-        head2.next.next = new Node(4);
+        head2 = new ListNode(1);
+        head2.next = new ListNode(3);
+        head2.next.next = new ListNode(4);
 
         head1 = mergeTwoList(head1, head2);
         printList(head1);
     }
 
-    static void printList(Node head){
-        Node temp = head;
+    static void printList(ListNode head){
+        ListNode temp = head;
         while(temp != null){
             System.out.print(temp.data + " ");
             temp = temp.next;
         }
     }
 
-    static Node mergeTwoList(Node head1, Node head2){
+    static ListNode mergeTwoList(ListNode head1, ListNode head2){
 
         if(head1 == null) return head2;
 

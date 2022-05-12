@@ -1,4 +1,4 @@
-package com.home.leetcode;
+package com.home.leetcode.week6;
 /*
     Link:
         https://leetcode.com/problems/unique-paths/

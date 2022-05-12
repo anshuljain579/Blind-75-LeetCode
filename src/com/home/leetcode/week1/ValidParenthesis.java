@@ -1,4 +1,4 @@
-package com.home.leetcode;
+package com.home.leetcode.week1;
 
 import jdk.dynalink.beans.StaticClass;
 

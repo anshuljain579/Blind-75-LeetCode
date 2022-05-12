@@ -1,4 +1,6 @@
-package com.home.leetcode;
+package com.home.leetcode.week2;
+
+import com.home.leetcode.util.ListNode;
 
 /*
     Questions:
@@ -8,33 +10,23 @@ package com.home.leetcode;
         https://leetcode.com/problems/middle-of-the-linked-list/
  */
 public class MiddleOfLinkedList {
-    static class Node{
-        int data;
-       Node next;
-
-        Node(int data){
-            this.data = data;
-            this.next = null;
-        }
-    }
-
-    static Node head;
+    static ListNode head;
 
     public static void main(String[] args) {
-        head = new Node(1);
-        head.next = new Node(2);
-        head.next.next = new Node(3);
-        head.next.next.next = new Node(4);
-        head.next.next.next.next = new Node(5);
-        head.next.next.next.next.next = new Node(6);
+        head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
+        head.next.next.next.next.next = new ListNode(6);
 
-        Node midNode = getMiddleNode(head);
+        ListNode midNode = getMiddleNode(head);
         System.out.println(midNode.data);
     }
 
-    static Node getMiddleNode(Node head){
-        Node fast = head;
-        Node slow = head;
+    static ListNode getMiddleNode(ListNode head){
+        ListNode fast = head;
+        ListNode slow = head;
 
         while(fast != null && fast.next != null){
             fast = fast.next.next;
